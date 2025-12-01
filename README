@@ -1,7 +1,5 @@
-C++ implementation of Lie Groups using Eigen.
-
-For a installation guideline, please refer to 
-
-https://github.com/strasdat/ScaViSLAM
-
-for now.
+git clone https://github.com/fynngwu/sophus_a621ff.git
+cd Sophus
+mkdir build && cd build && cmake ..
+make
+sudo make install
