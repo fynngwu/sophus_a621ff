@@ -81,7 +81,9 @@ set( Sophus_LIBRARY_DIR ${PROJECT_BINARY_DIR} )
 # Create the SophusConfig.cmake file for other cmake projects.
 CONFIGURE_FILE( ${CMAKE_CURRENT_SOURCE_DIR}/SophusConfig.cmake.in
     ${CMAKE_CURRENT_BINARY_DIR}/SophusConfig.cmake @ONLY IMMEDIATE )
-export( PACKAGE Sophus )
+# export( PACKAGE Sophus )  # Disabled to test installed package only
 
 INSTALL(DIRECTORY sophus DESTINATION ${CMAKE_INSTALL_PREFIX}/include FILES_MATCHING PATTERN "*.h" )
 INSTALL(TARGETS ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_PREFIX}/lib )
+INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/SophusConfig.cmake DESTINATION ${CMAKE_INSTALL_PREFIX}/share/Sophus )
+INSTALL(FILES cmake_modules/FindEigen3.cmake DESTINATION ${CMAKE_INSTALL_PREFIX}/share/Sophus )

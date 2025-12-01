@@ -1,17 +1,18 @@
 ################################################################################
-# Sophus source dir
-set( Sophus_SOURCE_DIR "@CMAKE_CURRENT_SOURCE_DIR@")
+# Sophus Config File
 
-################################################################################
-# Sophus build dir
-set( Sophus_DIR "@CMAKE_CURRENT_BINARY_DIR@")
+# Add the directory containing FindEigen3.cmake to the module path
+list(APPEND CMAKE_MODULE_PATH "@CMAKE_INSTALL_PREFIX@/share/Sophus")
 
-################################################################################
-set( Sophus_INCLUDE_DIR  "@Sophus_INCLUDE_DIR@" )
-set( Sophus_INCLUDE_DIRS  "@Sophus_INCLUDE_DIR@" )
+# Find Eigen3 (required dependency)
+find_package(Eigen3 REQUIRED)
 
-set( Sophus_LIBRARIES    "@Sophus_LIBRARIES@" )
-set( Sophus_LIBRARY      "@Sophus_LIBRARIES@" )
+# Sophus include directories
+set( Sophus_INCLUDE_DIR  "@CMAKE_INSTALL_PREFIX@/include" )
+set( Sophus_INCLUDE_DIRS  "@CMAKE_INSTALL_PREFIX@/include;${EIGEN3_INCLUDE_DIR}" )
 
-set( Sophus_LIBRARY_DIR  "@Sophus_LIBRARY_DIR@" )
-set( Sophus_LIBRARY_DIRS "@Sophus_LIBRARY_DIR@" )
+set( Sophus_LIBRARIES    "@CMAKE_INSTALL_PREFIX@/lib/libSophus.so" )
+set( Sophus_LIBRARY      "@CMAKE_INSTALL_PREFIX@/lib/libSophus.so" )
+
+set( Sophus_LIBRARY_DIR  "@CMAKE_INSTALL_PREFIX@/lib" )
+set( Sophus_LIBRARY_DIRS "@CMAKE_INSTALL_PREFIX@/lib" )
