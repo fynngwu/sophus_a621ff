@@ -1,5 +1,5 @@
-git clone https://github.com/fynngwu/sophus_a621ff.git
+git clone https://github.com/fynngwu/sophus_a621ff.git Sophus
 cd Sophus
 mkdir build && cd build && cmake ..
-make
+make -j$(nproc)
 sudo make install
